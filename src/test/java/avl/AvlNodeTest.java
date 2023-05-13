@@ -1,12 +1,10 @@
 package avl;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.*;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.assertj.core.api.AssertionsForClassTypes.*;
+
 
 /**
  * Created with IntelliJ IDEA. User: Antonio J. Nebro Date: 09/07/13 Time: 15:29
@@ -15,12 +13,12 @@ public class AvlNodeTest {
 
   private AvlNode<Integer> node;
 
-  @Before
+  @BeforeEach
   public void setUp() throws Exception {
     node = new AvlNode<Integer>(5);
   }
 
-  @After
+  @AfterEach
   public void tearDown() throws Exception {
     node = null;
   }
@@ -42,9 +40,17 @@ public class AvlNodeTest {
   }
 
   @Test
+  @DisplayName("Given a node, when setHeight, then node should have the expected height")
   public void shouldSetHeight() {
     int expectedHeight = 1000213;
     node.setHeight(expectedHeight);
     assertEquals("Height is different from expected.", expectedHeight, node.getHeight());
+  }
+
+  @Test
+  @DisplayName("Given a node with no parent, when updateHeight, then node should have no parent, height zero and be a leaf")
+  public void shouldRootNodeNotHaveParentAndHeightZeroAndLeaf()
+  {
+
   }
 }

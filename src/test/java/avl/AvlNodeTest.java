@@ -1,8 +1,6 @@
 package avl;
 
 import org.junit.jupiter.api.*;
-
-import static org.junit.Assert.*;
 import static org.assertj.core.api.AssertionsForClassTypes.*;
 
 
@@ -24,33 +22,87 @@ public class AvlNodeTest {
   }
 
   @Test
-  public void testHasLeft() {
-    assertFalse("testHasLeft", node.hasLeft());
-    AvlNode<Integer> node2 = new AvlNode<Integer>(6);
-    node.setLeft(node2);
-    assertTrue("testHasLeft", node.hasLeft());
-  }
-
-  @Test
-  public void testHasRight() {
-    assertFalse("testHasRight", node.hasRight());
-    AvlNode<Integer> node2 = new AvlNode<Integer>(6);
-    node.setRight(node2);
-    assertTrue("testHasRight", node.hasRight());
-  }
-
-  @Test
   @DisplayName("Given a node, when setHeight, then node should have the expected height")
-  public void shouldSetHeight() {
+  public void shouldSetHeightReturnExpected()
+  {
     int expectedHeight = 1000213;
     node.setHeight(expectedHeight);
-    assertEquals("Height is different from expected.", expectedHeight, node.getHeight());
+    assertThat(node.getHeight()).isEqualTo(expectedHeight);
   }
 
   @Test
   @DisplayName("Given a node with no parent, when updateHeight, then node should have no parent, height zero and be a leaf")
   public void shouldRootNodeNotHaveParentAndHeightZeroAndLeaf()
   {
+    assertThat(node.hasParent()).isFalse();
+    assertThat(node.getHeight()).isEqualTo(0);
+    assertThat(node.isLeaf()).isTrue();
+    assertThat(node.getParent()).isNull();
+  }
 
+  @Test
+  @DisplayName("Given a node, when setRight, then node should have the expected right child and height")
+  public void shouldSetRightChildAndHeight()
+  {
+    AvlNode<Integer> rightChild = new AvlNode<>(6);
+
+    node.setRight(rightChild);
+    node.updateHeight();
+
+    assertThat(node.hasRight()).isTrue();
+    assertThat(node.getRight()).isEqualTo(rightChild);
+    assertThat(node.getHeight()).isEqualTo(1);
+    assertThat(node.hasOnlyALeftChild()).isFalse();
+    assertThat(node.hasOnlyARightChild()).isTrue();
+    assertThat(node.hasLeft()).isFalse();
+  }
+
+  @Test
+  @DisplayName("Given a node, when setLeft, then node should have the expected left child and height")
+  public void shouldSetLeftChildAndHeight()
+  {
+    AvlNode<Integer> leftChild = new AvlNode<>(4);
+
+    node.setLeft(leftChild);
+    node.updateHeight();
+
+    assertThat(node.hasLeft()).isTrue();
+    assertThat(node.getLeft()).isEqualTo(leftChild);
+    assertThat(node.getHeight()).isEqualTo(1);
+    assertThat(node.hasOnlyALeftChild()).isTrue();
+    assertThat(node.hasOnlyARightChild()).isFalse();
+    assertThat(node.hasRight()).isFalse();
+  }
+
+  @Test
+  @DisplayName("Given a node, when setParent, then node should have the expected parent")
+  public void shouldSetAndHasParentWork()
+  {
+    AvlNode<Integer> parent = new AvlNode<>(1);
+
+    node.setParent(parent);
+
+    assertThat(node.hasParent()).isTrue();
+    assertThat(node.getParent()).isEqualTo(parent);
+  }
+
+  @Test
+  @DisplayName("Given a node, when setItem, then node should have the expected item")
+  public void shouldGetItemReturnExpected()
+  {
+    int expectedItem = 1000213;
+    node.setItem(expectedItem);
+    assertThat(node.getItem()).isEqualTo(expectedItem);
+  }
+
+  @Test
+  @DisplayName("Given a node, when setClosestNode, then node should have the expected closest node")
+  public void shouldSetAndGetClosestNodeWork()
+  {
+    AvlNode<Integer> closestNode = new AvlNode<>(1);
+
+    node.setClosestNode(closestNode);
+
+    assertThat(node.getClosestNode()).isEqualTo(closestNode);
   }
 }

@@ -37,6 +37,7 @@ import org.junit.jupiter.api.DisplayName;
     4.1 shouldSearchClosestNodeCorrectly -> Verify that the closest node is searched correctly
     4.2 shouldSearchNodeCorrectly -> Verify that the node is searched correctly
     4.3 shouldFindSuccessor -> Verify that the successor is found correctly
+    4.4 shouldReturnNullWhenSearchingANodeInAEmptyTree -> Verify that searchNode returns null when root Node is null;
 
   5. Test for height and balance
     5.1 shouldCalculateHeightAndBalanceOfASimpleBalancedTree -> Verify that the height and balance of a simple balanced tree is calculated correctly
@@ -553,6 +554,12 @@ public class AvlTreeTest {
       String tree = " | 20 | 8 | 4 | 12 | 10 | 14 | 22 | 24";
       assertEquals( tree, avlTree.toString());
     }
+
+    @Test
+    @DisplayName("Given an empty AVL tree, when searching a node, then return null")
+    public void shouldReturnNullWhenSearchingANodeInAEmptyTree() throws Exception{
+      assertNull(avlTree.search(1));
+    }
   }
 
   @Nested
@@ -835,6 +842,7 @@ public class AvlTreeTest {
       //No debería pasar nada
       assertEquals(expected, result);
     }
+
   }
 
 }

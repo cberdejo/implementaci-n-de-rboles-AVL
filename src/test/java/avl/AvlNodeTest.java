@@ -7,6 +7,24 @@ import static org.assertj.core.api.AssertionsForClassTypes.*;
 /**
  * Created with IntelliJ IDEA. User: Antonio J. Nebro Date: 09/07/13 Time: 15:29
  */
+
+  /*
+1. shouldSetHeightReturnExpected -> Verify that the setHeight() method works correctly
+2. shouldRootNodeNotHaveParentAndHeightZeroAndLeaf -> Verify that the root node has no parent, height zero and is a leaf
+3. shouldSetRightChildAndHeight -> Verify that the setRight() method works correctly
+4. shouldSetLeftChildAndHeight -> Verify that the setLeft() method works correctly
+5. shouldSetAndHasParentWork -> Verify that the setParent() and hasParent() methods work correctly
+6. shouldGetItemReturnExpected -> Verify that the getItem() method works correctly
+7. shouldSetAndGetClosestNodeWork -> Verify that the setClosestNode() and getClosestNode() methods work correctly
+*/
+
+
+  /*
+  @author: Alvaro Tapia Muñoz
+  @author: Christian Berdejo
+   */
+@Nested
+@DisplayName("Test para la clase AvlNode")
 public class AvlNodeTest {
 
   private AvlNode<Integer> node;
@@ -106,3 +124,5 @@ public class AvlNodeTest {
     assertThat(node.getClosestNode()).isEqualTo(closestNode);
   }
 }
+
+

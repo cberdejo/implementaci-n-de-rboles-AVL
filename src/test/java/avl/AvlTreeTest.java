@@ -40,7 +40,7 @@ public class AvlTreeTest {
   public class isEmptyTests{
     @Test
     @DisplayName("Given an empty AVL tree, when checking isEmpty, then it should return true")
-    public void testAvlIsEmpty() throws Exception {
+    public void shouldReturnTrueWhenAvlIsEmpty() throws Exception {
       assertTrue("TestAvlIsEmpty", avlTree.avlIsEmpty());
 
       avlTree.insertTop(new AvlNode(5));
@@ -63,7 +63,7 @@ public class AvlTreeTest {
   public class TestsForInsertAndReBalance{
     @Test
     @DisplayName("Given a AVL tree, when inserting a node at the top, then the top node and tree representation should be updated accordingly")
-    public void testInsertTop() throws Exception {
+    public void shouldUpdateTopNodeAndTreeRepresentationOnInsertTop() throws Exception {
       AvlNode<Integer> node = new AvlNode(4);
       avlTree.insertTop(node);
       assertEquals("TestInsertTop", node, avlTree.getTop());
@@ -73,7 +73,7 @@ public class AvlTreeTest {
 
     @Test
     @DisplayName("Given an AVL tree with a top node, when inserting right and left elements just after the top, then the tree should be updated correctly")
-    public void testInsertingRightAndLeftElementsJustAfterTop() throws Exception {
+    public void shouldUpdateTreeCorrectlyOnInsertingRightAndLeftElementsJustAfterTop() throws Exception {
       AvlNode<Integer> node = new AvlNode<Integer>(6);
       avlTree.insertAvlNode(node);
       AvlNode<Integer> nodeLeft = new AvlNode<Integer>(4);
@@ -103,7 +103,7 @@ public class AvlTreeTest {
 
     @Test
     @DisplayName("Given an AVL tree with a top node, when inserting a left element, then the tree should be updated correctly")
-    public void testInsertingLeftElement() throws Exception {
+    public void shouldUpdateTreeCorrectlyOnInsertingLeftElement() throws Exception {
       AvlNode<Integer> node = new AvlNode<Integer>(6);
       avlTree.insertAvlNode(node);
       AvlNode<Integer> nodeLeft = new AvlNode<Integer>(4);
@@ -118,7 +118,7 @@ public class AvlTreeTest {
 
     @Test
     @DisplayName("Given an AVL tree with a top node, when inserting a right element, then the tree should be updated correctly")
-    public void testInsertingRightElement() throws Exception {
+    public void shouldUpdateTreeCorrectlyOnInsertingRightElement() throws Exception {
       AvlNode<Integer> node = new AvlNode<Integer>(6);
       avlTree.insertAvlNode(node);
       AvlNode<Integer> nodeRight = new AvlNode<Integer>(9);
@@ -137,7 +137,7 @@ public class AvlTreeTest {
      */
     @Test
     @DisplayName("Given an AVL tree, when inserting a left-left node and rebalancing, then the tree should be correctly modified")
-    public void testInsertingLeftLeftNodeAndRebalance() throws Exception {
+    public void shouldModifyTreeCorrectlyOnInsertingLeftLeftNodeAndRebalance() throws Exception {
       AvlNode<Integer> node1, node2, node3, node4, node5;
 
       node1 = new AvlNode<Integer>(7);
@@ -179,7 +179,7 @@ public class AvlTreeTest {
      */
     @Test
     @DisplayName("Given an AVL tree, when inserting a right-right node and rebalancing, then the tree should be correctly modified")
-    public void testInsertingRightRightNodeAndRebalance() throws Exception {
+    public void shouldModifyTreeCorrectlyOnInsertingRightRightNodeAndRebalance() throws Exception {
       AvlNode<Integer> node1, node2, node3, node4, node5;
 
       node1 = new AvlNode<Integer>(7);
@@ -221,7 +221,7 @@ public class AvlTreeTest {
      */
     @Test
     @DisplayName("Given an AVL tree, when inserting 7, 4, 3, 2, and 1, then verify the correct structure")
-    public void testInserting7_4_3_2_1() throws Exception {
+    public void shouldVerifyCorrectStructureOnInserting7_4_3_2_1() throws Exception {
       AvlNode<Integer> node1, node2, node3, node4, node5;
 
       node1 = new AvlNode<Integer>(7);
@@ -256,7 +256,7 @@ public class AvlTreeTest {
      */
     @Test
     @DisplayName("Given an AVL tree, when inserting 7, 8, 9 , 10, and 11, then verify the correct structure")
-    public void testInserting7_8_9_10_11() throws Exception {
+    public void shouldVerifyCorrectStructureOnInserting7_8_9_10_11() throws Exception {
       AvlNode<Integer> node1, node2, node3, node4, node5;
 
       node1 = new AvlNode<Integer>(7);
@@ -291,7 +291,7 @@ public class AvlTreeTest {
      */
     @Test
     @DisplayName("Given an AVL tree, when inserting a left-right node and rebalancing, then the tree should be correctly modified")
-    public void testInsertingLeftRightNodeAndRebalance() throws Exception {
+    public void shouldCorrectlyModifyTreeOnInsertingLeftRightNodeAndRebalance() throws Exception {
       AvlNode<Integer> node1, node2, node3;
 
       node1 = new AvlNode<Integer>(7);
@@ -328,7 +328,7 @@ public class AvlTreeTest {
      */
     @Test
     @DisplayName("Given an AVL tree, when inserting a right-left node and rebalancing, then the tree should be correctly modified")
-    public void testInsertingRightLeftNodeAndRebalance() throws Exception {
+    public void shouldCorrectlyModifyTreeOnInsertingRightLeftNodeAndRebalance() throws Exception {
       AvlNode<Integer> node1, node2, node3;
 
       node1 = new AvlNode<Integer>(7);
@@ -362,7 +362,7 @@ public class AvlTreeTest {
 
     @Test
     @DisplayName("Given an AVL tree, when inserting duplicate nodes, then verify only one instance of the duplicate node is inserted")
-    public void testInsertingDuplicateNodes(){
+    public void shouldInsertOnlyOneInstanceOnInsertingDuplicateNodes(){
       AvlNode<Integer> node;
 
       //G
@@ -386,11 +386,11 @@ public class AvlTreeTest {
   }
 
   @Nested
-  @DisplayName("test for comparator")
+  @DisplayName("Test for comparator")
   public class testsForComparator{
     @Test
     @DisplayName("Given two AVL nodes, when comparing their values, then the correct comparison result should be returned")
-    public void testCompareNodes() throws Exception {
+    public void shouldCompareNodesCorrectly() throws Exception {
       AvlNode<Integer> node1 = new AvlNode<Integer>(4);
       AvlNode<Integer> node2 = new AvlNode<Integer>(5);
       AvlNode<Integer> node3 = new AvlNode<Integer>(5);
@@ -402,7 +402,7 @@ public class AvlTreeTest {
   }
 
   @Nested
-  @DisplayName("test for searching nodes related methods")
+  @DisplayName("Test searching nodes related methods")
   public class testForSearchingNodes{
     /*
 @Test
@@ -414,7 +414,7 @@ public void testInsertingTheFirstElement() throws Exception {
 */
     @Test
     @DisplayName("Given an AVL tree, when searching for the closest node, then the correct result should be returned")
-    public void testSearchClosestNode() throws Exception {
+    public void shouldSearchClosestNodeCorrectly() throws Exception {
       int result;
       AvlNode<Integer> node = new AvlNode<Integer>(7);
       result = avlTree.searchClosestNode(node);
@@ -447,7 +447,7 @@ public void testInsertingTheFirstElement() throws Exception {
 
     @Test
     @DisplayName("Given an AVL tree with nodes 7, 9, 8, 2, and 3, when searching for specific nodes, then verify correct search results")
-    public void testSearchNode() throws Exception {
+    public void shouldSearchNodeCorrectly() throws Exception {
       AvlNode<Integer> node1, node2, node3, node4, node5;
 
       node1 = new AvlNode<Integer>(7);
@@ -481,7 +481,7 @@ public void testInsertingTheFirstElement() throws Exception {
 
     @Test
     @DisplayName("Given an AVL tree with nodes 20, 8, 22, 4, 12, 24, 10, and 14, when finding successors for specific nodes, then verify correct successor nodes are returned")
-    public void testFindSuccessor() throws Exception {
+    public void shouldFindSuccessor() throws Exception {
       AvlNode<Integer> node;
 
       node = new AvlNode<Integer>(20);
@@ -530,7 +530,7 @@ public void testInsertingTheFirstElement() throws Exception {
      */
     @Test
     @DisplayName("Given a simple balanced AVL tree, when calculating the height and balance factors, then the correct values should be returned")
-    public void testHeightAndBalanceOfASimpleBalancedTree() throws Exception {
+    public void shouldCalculateHeightAndBalanceOfASimpleBalancedTree() throws Exception {
       AvlNode<Integer> node1, node2, node3, node4, node5;
 
       node1 = new AvlNode<Integer>(7);
@@ -581,7 +581,7 @@ public void testInsertingTheFirstElement() throws Exception {
   public class testsForDeletingNodes{
     @Test
     @DisplayName("Given an AVL tree with nodes 7, 9, 2, 8, and 3, when deleting leaf nodes, then verify nodes are properly deleted and tree is rebalanced")
-    public void testDeletingLeafNodes() throws Exception {
+    public void shouldDeleteLeafNodesProperly() throws Exception {
       AvlNode<Integer> node1, node2, node3, node4, node5;
 
       node1 = new AvlNode<Integer>(7);
@@ -631,7 +631,7 @@ public void testInsertingTheFirstElement() throws Exception {
 
     @Test
     @DisplayName("Given an AVL tree with nodes 7, 9, 2, and 8, when deleting nodes with one leaf, then verify nodes are properly deleted and tree is rebalanced")
-    public void testDeletingNodesWithOneLeaf() throws Exception {
+    public void shouldDeleteNodesWithOneLeafProperly() throws Exception {
       AvlNode<Integer> node1, node2, node3, node4, node5;
 
       node1 = new AvlNode<Integer>(7);
@@ -669,7 +669,7 @@ public void testInsertingTheFirstElement() throws Exception {
 
     @Test
     @DisplayName("Given an AVL tree with nodes 20, 8, 22, 4, 12, 24, 10, and 14, when deleting nodes with two leaves, then verify nodes are properly deleted and tree is rebalanced")
-    public void testDeletingNodesWithTwoLeaves() throws Exception {
+    public void shouldDeleteNodesWithTwoLeavesProperly() throws Exception {
       AvlNode<Integer> node;
 
       node = new AvlNode<Integer>(20);
@@ -713,7 +713,7 @@ public void testInsertingTheFirstElement() throws Exception {
 
     @Test
     @DisplayName("Given an AVL tree with nodes 20, 8, 22, 4, 12, 24, 10, and 14, when deleting nodes and rebalancing, then verify tree is properly rebalanced")
-    public void testDeletingAndRebalancing() throws Exception {
+    public void shouldDeleteAndRebalanceCorrectly() throws Exception {
       AvlNode<Integer> node;
 
       node = new AvlNode<Integer>(20);
@@ -750,7 +750,7 @@ public void testInsertingTheFirstElement() throws Exception {
 
     @Test
     @DisplayName("Given an AVL tree with nodes 20, 8, 22, 4, 12, 24, 10, and 14, when deleting the top node, then verify tree is properly rebalanced")
-    public void testDeletingTopNode() throws Exception {
+    public void shouldRebalanceWhenDeletingTopNode() throws Exception {
       AvlNode<Integer> node;
 
       node = new AvlNode<Integer>(20);
@@ -784,7 +784,7 @@ public void testInsertingTheFirstElement() throws Exception {
     }
     @Test
     @DisplayName("Given an AVL tree, when deleting a non-existing node, then verify the tree remains unchanged")
-    public void testDeletingNonExistingNode() {
+    public void shouldNotChangeTreeWhenDeletingNonExistingNode() {
       //G
       String expected = " | 5 | 2 | 8";
       avlTree.insert(5);

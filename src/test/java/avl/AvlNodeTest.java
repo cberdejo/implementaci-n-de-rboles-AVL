@@ -3,11 +3,6 @@ package avl;
 import org.junit.jupiter.api.*;
 import static org.assertj.core.api.AssertionsForClassTypes.*;
 
-
-/**
- * Created with IntelliJ IDEA. User: Antonio J. Nebro Date: 09/07/13 Time: 15:29
- */
-
   /*
 1. shouldSetHeightReturnExpected -> Verify that the setHeight() method works correctly
 2. shouldRootNodeNotHaveParentAndHeightZeroAndLeaf -> Verify that the root node has no parent, height zero and is a leaf

@@ -55,9 +55,6 @@ import org.junit.jupiter.api.DisplayName;
   @author: Christian Berdejo (cberdejo@uma.es)
    */
 
-/**
- * Created with IntelliJ IDEA. User: Antonio J. Nebro Date: 08/07/13
- */
 public class AvlTreeTest {
 
   AvlTree<Integer> avlTree;

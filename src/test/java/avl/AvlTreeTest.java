@@ -34,10 +34,6 @@ public class AvlTreeTest {
     comparator = null;
   }
 
-  //quiza probar que al buscar un nodo en un arbol nulo devuelva null
-
-  //quiza probar que al insertar un nodo en un arbol nulo, devuelva null
-
   @Test
   public void testAvlIsEmpty() throws Exception {
     assertTrue("TestAvlIsEmpty", avlTree.avlIsEmpty());

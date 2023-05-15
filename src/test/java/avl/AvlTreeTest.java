@@ -5,10 +5,14 @@ import static junit.framework.Assert.assertNull;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 /**
  * Created with IntelliJ IDEA. User: Antonio J. Nebro Date: 08/07/13
@@ -702,4 +706,54 @@ public class AvlTreeTest {
     avlTree.delete(20);
     assertEquals("testDeletingTopNode", " | 12 | 8 | 4 | 10 | 22 | 14 | 24", avlTree.toString());
   }
+
+  @Test
+  public void testInsertingDuplicateNodes(){
+    AvlNode<Integer> node;
+
+    //G
+   String expected = " | 5 | 2 | 8";
+
+    avlTree.insert(5);
+    avlTree.insert(2);
+    avlTree.insert(8);
+
+
+    //W
+    avlTree.insert(2);
+
+    //T
+
+    String  result = avlTree.toString();
+    assertEquals(expected, result);
+
+
+  }
+  @Test
+  public void testDeletingNonExistingNode() {
+   //G
+    String expected = " | 5 | 2 | 8";
+    avlTree.insert(5);
+    avlTree.insert(2);
+    avlTree.insert(8);
+
+    //W
+    avlTree.delete(10);
+    String result = avlTree.toString();
+
+
+    //T
+    //No debería pasar nada
+    assertEquals(expected, result);
+  }
+
+  @Test
+  public void shouldTreeBeEmptyWhenAllNodesAreRemoved() {
+    avlTree.insert(1);
+    assertFalse(avlTree.avlIsEmpty());
+
+    avlTree.delete(1);
+    assertTrue(avlTree.avlIsEmpty());
+  }
+
 }

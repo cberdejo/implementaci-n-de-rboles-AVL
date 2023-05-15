@@ -20,8 +20,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.*;
 
 
   /*
-  @author: Alvaro Tapia Muñoz
-  @author: Christian Berdejo
+  @author: Alvaro Tapia (alvartap@uma.es)
+  @author: Christian Berdejo (cberdejo@uma.es)
    */
 @Nested
 @DisplayName("Test para la clase AvlNode")

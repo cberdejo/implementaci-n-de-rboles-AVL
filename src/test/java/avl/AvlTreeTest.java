@@ -12,6 +12,48 @@ import java.util.Comparator;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.DisplayName;
 
+  /*
+  1. Test for isEmpty()
+    1.1 shouldReturnTrueWhenAvlIsEmpty -> Verify that isEmpty() returns true when the AVL is empty
+    1.2 shouldTreeBeEmptyWhenAllNodesAreRemoved -> Verify that the tree is empty when all nodes are removed
+
+  2. Test for insert() and balance()
+    2.1 shouldUpdateTopNodeAndTreeRepresentationOnInsertTop -> Verify that the top node is updated and the tree representation is correct when inserting the top node
+    2.2 shouldUpdateTreeCorrectlyOnInsertingRightAndLeftElementsJustAfterTop -> Verify that the tree is updated correctly when inserting right and left elements just after the top
+    2.3 shouldUpdateTreeCorrectlyOnInsertingLeftElement -> Verify that the tree is updated correctly when inserting a left element
+    2.4 shouldUpdateTreeCorrectlyOnInsertingRightElement -> Verify that the tree is updated correctly when inserting a right element
+    2.5 shouldModifyTreeCorrectlyOnInsertingLeftLeftNodeAndRebalance -> Verify that the tree is modified correctly when inserting a left-left node and rebalancing
+    2.6 shouldModifyTreeCorrectlyOnInsertingRightRightNodeAndRebalance -> Verify that the tree is modified correctly when inserting a right-right node and rebalancing
+    2.7 shouldVerifyCorrectStructureOnInserting7_4_3_2_1 -> Verify that the tree is modified correctly when inserting 7, 4, 3, 2, 1
+    2.8 shouldVerifyCorrectStructureOnInserting7_8_9_10_11 -> Verify that the tree is modified correctly when inserting 7, 8, 9, 10, 11
+    2.9 shouldCorrectlyModifyTreeOnInsertingLeftRightNodeAndRebalance -> Verify that the tree is modified correctly when inserting a left-right node and rebalancing
+    2.10 shouldCorrectlyModifyTreeOnInsertingRightLeftNodeAndRebalance -> Verify that the tree is modified correctly when inserting a right-left node and rebalancing
+    2.11 shouldInsertOnlyOneInstanceOnInsertingDuplicateNodes -> Verify that only one instance is inserted when inserting duplicate nodes
+
+  3. Test for comparator
+    3.1 shouldCompareNodesCorrectly -> Verify that the comparator compares nodes correctly
+
+  4. Test for searching
+    4.1 shouldSearchClosestNodeCorrectly -> Verify that the closest node is searched correctly
+    4.2 shouldSearchNodeCorrectly -> Verify that the node is searched correctly
+    4.3 shouldFindSuccessor -> Verify that the successor is found correctly
+
+  5. Test for height and balance
+    5.1 shouldCalculateHeightAndBalanceOfASimpleBalancedTree -> Verify that the height and balance of a simple balanced tree is calculated correctly
+
+  6. Test for deleting
+    6.1 shouldDeleteLeafNodesProperly -> Verify that leaf nodes are deleted properly
+    6.2 shouldDeleteNodesWithOneLeafProperly -> Verify that nodes with one leaf are deleted properly
+    6.3 shouldDeleteNodesWithTwoLeavesProperly -> Verify that nodes with two leaves are deleted properly
+    6.4 shouldDeleteAndRebalanceCorrectly -> Verify that nodes are deleted and the tree is rebalanced correctly
+    6.5 shouldRebalanceWhenDeletingTopNode -> Verify that the tree is rebalanced correctly when deleting the top node
+    6.6 shouldNotChangeTreeWhenDeletingNonExistingNode -> Verify that the tree remains unchanged when deleting a non-existing node
+   */
+
+  /*
+  @author: Alvaro Tapia (alvartap@uma.es)
+  @author: Christian Berdejo (cberdejo@uma.es)
+   */
 
 /**
  * Created with IntelliJ IDEA. User: Antonio J. Nebro Date: 08/07/13
